@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Job Scheduler">
+        <lightning-layout>
+            <lightning-layout-item size="12" padding="around-small">
+                <form onsubmit={handleJobSubmission}>
+                    <lightning-input type="text" name="jobName" label="Job Title" required></lightning-input>
+                    <lightning-input type="text" name="jobLocation" label="Job Location" required></lightning-input>
+                    <br />
+                    <br />
+                    <h3>Office Location</h3>
+                    <lightning-input type="text" name="officeLocation" label="Office Location" required onchange={handleOfficeLocationChange}></lightning-input>
+                    <br />
+                    <br />
+                    <h3>Max Travel Time</h3>
+                    <lightning-input type="number" name="maxTravelTime" label="Max Travel Time" min="1" value={maxTravelTime} onchange={handleMaxTravelTimeChange}></lightning-input>
+                    <br />
+                    <br />
+                    <lightning-button type="submit" label="Add Job"></lightning-button>
+                </form>
+            </lightning-layout-item>
+        </lightning-layout>
+        <br />
+        <br />
+        <lightning-layout>
+            <lightning-layout-item size="12" padding="around-small">
+                <lightning-button variant="brand" label="Schedule Jobs" onclick={handleJobScheduling}></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>
